@@ -13,8 +13,8 @@ goodreads-web-scraper
         :target: https://goodreads-web-scraper.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/mdzhang/goodreads_web_scraper/shield.svg
-     :target: https://pyup.io/repos/github/mdzhang/goodreads_web_scraper/
+.. image:: https://pyup.io/repos/github/mdzhang/goodreads-web-scraper/shield.svg
+     :target: https://pyup.io/repos/github/mdzhang/goodreads-web-scraper/
      :alt: Updates
 
 

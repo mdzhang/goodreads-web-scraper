@@ -11,18 +11,14 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-    'Click>=6.0',
-    # TODO: put package requirements here
-]
 
-setup_requirements = [
-    # TODO(mdzhang): put setup requirements (distutils extensions, etc.) here
-]
+def read_requires(file):
+    with open(file) as reqs_txt:
+        return [line for line in reqs_txt]
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+
+requirements = read_requires('requirements.txt')
+test_requirements = read_requires('requirements_dev.txt')
 
 setup(
     name='goodreads_web_scraper',
@@ -31,13 +27,8 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Michelle D Zhang",
     author_email='zhang.michelle.d@gmail.com',
-    url='https://github.com/mdzhang/goodreads_web_scraper',
-    packages=find_packages(include=['goodreads_web_scraper']),
-    entry_points={
-        'console_scripts': [
-            'goodreads_web_scraper=goodreads_web_scraper.cli:main'
-        ]
-    },
+    url='https://github.com/mdzhang/goodreads-web-scraper',
+    packages=['goodreads_web_scraper'],
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",
@@ -48,15 +39,9 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-    test_suite='tests',
+    test_suite='goodreads_web_scraper.tests',
     tests_require=test_requirements,
-    setup_requires=setup_requirements,
 )

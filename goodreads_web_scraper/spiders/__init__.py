@@ -1,0 +1,1 @@
+from .genres_new_releases_spider import GenresNewReleasesSpider
